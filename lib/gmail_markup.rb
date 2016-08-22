@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'gmail_markup/version'
 require 'gmail_markup/helpers'
 require 'gmail_markup/generators/view_action'

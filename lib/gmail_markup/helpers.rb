@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module GmailMarkup::Helpers
   def render_gmail_markup
     return unless @gmail_markup_generator.present?

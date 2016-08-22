@@ -1,11 +1,9 @@
 AllCops:
+  TargetRubyVersion: 2.3
   Exclude:
     - 'bin/**'
 Metrics/LineLength:
   Max: 120
-
-Rails:
-  Enabled: true
 
 # Disables "Use nested module/class definitions instead of compact style" warning
 ClassAndModuleChildren:
