@@ -1,9 +1,15 @@
-# GmailMarkup
+# Gmail Markup for Rails
 [![Build Status](https://travis-ci.org/mscoutermarsh/gmail_markup_rails.svg?branch=master)](https://travis-ci.org/mscoutermarsh/gmail_markup_rails)
 
 Add those fancy Gmail action buttons to your emails.
 
 <img src="https://raw.githubusercontent.com/mscoutermarsh/gmail_markup_rails/master/readme-screenshot.png" width="268px"/>
+
+### Actions Implemented :construction:
+This gem is a work in progress.
+
+- [x] [View Action](https://developers.google.com/gmail/markup/reference/go-to-action#view_action)
+- [ ] [Track Action](https://developers.google.com/gmail/markup/reference/go-to-action#track_action)
 
 ## Installation
 
@@ -66,7 +72,6 @@ end
 
 - `name` is the text shown in the button
 - `target_url` is where the user will be directed when they click it
-
 
 ## Development
 
