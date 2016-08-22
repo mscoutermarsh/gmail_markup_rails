@@ -3,3 +3,14 @@ AllCops:
     - 'bin/**'
 Metrics/LineLength:
   Max: 120
+
+Rails:
+  Enabled: true
+
+# Disables "Use nested module/class definitions instead of compact style" warning
+ClassAndModuleChildren:
+  Enabled: false
+
+# Disables "Missing top-level class documentation comment" warning
+Documentation:
+  Enabled: false

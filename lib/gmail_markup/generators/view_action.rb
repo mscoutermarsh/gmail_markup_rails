@@ -24,8 +24,8 @@ module GmailMarkup::Generators
         'potentialAction': {
           '@type': 'ViewAction',
           'url': target_url,
-          'name': name,
-        },
+          'name': name
+        }
       }
     end
   end

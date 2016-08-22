@@ -5,4 +5,3 @@ module GmailMarkup::Helpers
     content_tag(:script, @gmail_markup_generator.to_json, type: 'application/ld+json')
   end
 end
-
