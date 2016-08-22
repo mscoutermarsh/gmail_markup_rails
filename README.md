@@ -1,6 +1,9 @@
 # GmailMarkup
 [![Build Status](https://travis-ci.org/mscoutermarsh/gmail_markup_rails.svg?branch=master)](https://travis-ci.org/mscoutermarsh/gmail_markup_rails)
 
+Add those fancy Gmail action buttons to your emails.
+
+<img src="https://raw.githubusercontent.com/mscoutermarsh/gmail_markup_rails/master/readme-screenshot.png" width="268px"/>
 
 ## Installation
 
@@ -20,7 +23,50 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+#### 1. Add to your mailer layout
+First, you'll need to add `<%= render_gmail_markup %>` to your mailer layout somewhere **inside** the body tag. This is how Gmail markup will add the correct markup to your emails.
+
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <%= yield %>
+    <%= render_gmail_markup %>
+  </body>
+</html>
+```
+
+#### 2. Add to ApplicationMailer
+
+In your ApplicationMailer, add `include GmailMarkup`
+
+```Ruby
+class ApplicationMailer < ActionMailer::Base
+  include GmailMarkup
+  ...
+end
+```
+
+#### 3. Use it
+
+Now, to add an action to your emails. Use `gmail_markup_view_action`
+```Ruby
+class BattleSchoolMailer < ActionMailer::Base
+  def welcome
+    gmail_markup_view_action(name: 'Save Earth',
+                             target_url: 'https://www.battleschool.gov')
+                             
+    mail(to: 'ender@battleschool.gov', subject: 'Welcome Ender')
+  end
+end
+```
+
+- `name` is the text shown in the button
+- `target_url` is where the user will be directed when they click it
+
 
 ## Development
 
@@ -30,7 +76,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/gmail_markup_rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mscoutermarsh/gmail_markup_rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License
